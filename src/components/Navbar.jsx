@@ -1,25 +1,24 @@
-import React from "react";
-import Button from 'react-bootstrap/Button';
+import React ,{useEffect}from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-function Header() {
+function Header(props) {
+  const onSearch = (filter) => {
+  props.handelSearchContributor(filter)
+  }
   return (
-
     <Navbar bg="dark" variant="dark" expand="lg" >
       <Container >
-        <Navbar.Brand href="#" >Buscador de colaboladores</Navbar.Brand>
+        <Navbar.Brand href="#" >Buscador de colaboladores:</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll"  className="justify-content-end">
-          <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Busca un colaborador"
               className="me-2"
               aria-label="Search"
-            />
-            <Button variant="outline-warning">Search</Button>
-          </Form>
+              onChange={(e)=> onSearch(e.target.value)}
+                />
         </Navbar.Collapse>
       </Container>
     </Navbar>
