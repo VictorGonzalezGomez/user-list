@@ -6,12 +6,16 @@ import Row from 'react-bootstrap/Row';
 import {nanoid} from "nanoid";
 
 const AddContributor=(props)=> {
+  /*********** estados a utilizar para la captura de datos ingresados por el usuario ***********/
 const [name, setName]= useState("");
 const [email, setEmail]= useState("");
-const onclick = () =>{
-  props.handelAddContributor(name,email);
-}
 
+  /*********** metodo encardado de llamar y enviar los datos al metodo
+              handleAddContributor que agregara dichos datos a la lista ***********/
+const onclick = () =>{
+  props.handleAddContributor(name,email);
+}
+  /***********  formulario para añadir colaboradores  ***********/
   return (
     <Form className="mx-0" >
       <Form.Group as={Row} className="mb-3 mt-4 mx-0" controlId="formHorizontalName" >

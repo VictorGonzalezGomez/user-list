@@ -14,7 +14,7 @@ const ContributorList = (props) => {
         </tr>
         </thead>
         <tbody>
-
+        {/**********  metodo que imprime tanto la lista con todos los colaboradores como la lista filtrada **********/}
         { props.collaborators.map((collaborator)=> (
           <tr key={collaborator.id}>
           <td>{collaborator.id}</td>

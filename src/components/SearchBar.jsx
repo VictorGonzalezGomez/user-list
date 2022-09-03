@@ -2,9 +2,12 @@ import React ,{useEffect}from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-function Header(props) {
+
+function SearchBar(props) {
+  /************ metodo encargado de llamar a la metodo handleSearchContributor y
+                    enviar los datos a utilizar en la busqueda de colaboradores ************/
   const onSearch = (filter) => {
-  props.handelSearchContributor(filter)
+  props.handleSearchContributor(filter)
   }
   return (
     <Navbar bg="dark" variant="dark" expand="lg" >
@@ -25,4 +28,4 @@ function Header(props) {
     )
 }
 
-export default Header;
+export default SearchBar;
