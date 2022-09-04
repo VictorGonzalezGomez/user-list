@@ -9,6 +9,8 @@ function PageContainer() {
   /***********   estados inicial a ocupar por cada componente    ***********/
   const [auxCollaborators, setAuxCollaborator] = useState(BaseColaboradores);
   const [collaborators, setCollaborator] = useState(BaseColaboradores);
+
+  const regEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   /***********   metodo encargado de manejar y validar el ingreso  de collaboradores a la lista   ***********/
   const handleAddContributor = (name, email) => {
   /*********** validacion de datos ingresados por el usuario ***********/
@@ -18,6 +20,10 @@ function PageContainer() {
     }
     else if (emailExists(email)) {
         alert("El correo ingresado ya exite, ingrese un correo valido")
+      return;
+    }
+    else if (!regEX.test(email)){
+        alert("el correo ingresado no es valido")
       return;
     }
   /*********** operatoria de agregar un collaborador a la lista ***********/
@@ -40,6 +46,7 @@ function PageContainer() {
    const isEmpty = (value) => {
     return value.length === 0;
   }
+
   /*********** componentes ***********/
   return(
     <>
