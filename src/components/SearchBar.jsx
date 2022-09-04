@@ -19,6 +19,8 @@ function SearchBar(props) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll"  className="justify-content-end">
             < DebounceInput element={Form.Control}
+              minLength={2}
+              debounceTimeout={600}
               type="search"
               placeholder="Busca un colaborador"
               className="me-2"
